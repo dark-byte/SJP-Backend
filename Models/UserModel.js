@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Skills = require('./Skills')
+const Joblist = require('./Joblist')
 
 const userModel = new mongoose.Schema({
     name: {
@@ -38,12 +39,9 @@ const userModel = new mongoose.Schema({
         type: String,
         enum: Skills,
         default: ''
-    }
+    },
+    bookmarks: [{type: Joblist}]
 
-    //TODO - Bookmarsk
-
-
-    
 })
 
 const UserModel = mongoose.model('UserModel', userModel)
