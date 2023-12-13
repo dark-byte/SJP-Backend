@@ -1,6 +1,5 @@
 
 const express = require('express')
-const db = require('./MongoConnect')
 const companyModel = require('./Models/CompanyModel')
 
 

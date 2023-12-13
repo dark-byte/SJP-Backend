@@ -1,6 +1,10 @@
 const mongoose = require ('mongoose')
 const { skills } = require('./Skills')
 const jobList = new mongoose.Schema ({
+    company_id : {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'CompanyModel'
+    },
     job_title : {
         type: String
     },

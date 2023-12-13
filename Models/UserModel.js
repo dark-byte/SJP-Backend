@@ -43,7 +43,9 @@ const userModel = new mongoose.Schema({
         enum: Skills,
         default: ''
     },
-    bookmarks: [{type: Joblist}]
+    bookmarks: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'CompanyModel'}]
 
 })
 
