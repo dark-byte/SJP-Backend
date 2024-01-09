@@ -1,6 +1,7 @@
 
 const express = require('express')
-const companyModel = require('./Models/CompanyModel')
+const CompanyModel = require('./Models/CompanyModel')
+const db = require('./MongoConnect')
 
 
 const app = express()
@@ -15,7 +16,7 @@ app.get('/', (req, res) => {
 app.post('/company', async (req, res) =>{
     const { name, logo, company_description, job_lists, industry, social_links } = req.body
 
-    const newCompany = new companyModel({
+    const newCompany = new CompanyModel({
         name, logo, company_description, job_lists, industry, social_links
     })
 
