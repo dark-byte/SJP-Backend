@@ -1,31 +1,31 @@
-const mongoose = require ('mongoose')
+const mongoose = require('mongoose');
 
 const companyModel = new mongoose.Schema({
-    name:{
-        type:String,
-        require:true,
-        trim:true
+    name: {
+        type: String,
+        required: true,
+        trim: true
     },
     logo: {
-        data :Buffer,
+        data: Buffer,
         contentType: String
     },
     job_lists: [{
-        type: String
+        title: String,
+        description: String
     }],
-    company_description : {
+    company_description: {
         type: String
     },
-    social_links : [{
+    social_links: {
+        website: String,
+        linkedin: String
+    },
+    industry: {
         type: String
-    }],
-    industry :{
-    type: String
     }
-})
+});
 
+const CompanyModel = mongoose.model('CompanyModel', companyModel);
 
-
-const CompanyModel = mongoose.model('CompanyModel', companyModel)
-
-module.exports = CompanyModel
+module.exports = CompanyModel;
